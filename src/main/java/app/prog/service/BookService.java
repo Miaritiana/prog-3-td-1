@@ -52,7 +52,7 @@ public class BookService {
         Link 2 : https://www.baeldung.com/exception-handling-for-rest-with-spring
          */
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-                    "Book "+ BookEntityId + "not found");
+                    "Book "+ BookEntityId + " not found");
         }
     }
 }
