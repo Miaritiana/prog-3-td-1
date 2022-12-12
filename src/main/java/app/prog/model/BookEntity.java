@@ -1,5 +1,6 @@
 package app.prog.model;
 
+import app.prog.controller.response.AuthorResponse;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,7 +20,8 @@ public class BookEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
-    private String author;
+    @OneToOne
+    private Author author;
     private Integer pageNumber;
     private LocalDate releaseDate;
 
