@@ -209,7 +209,5 @@ components:
       properties:
         name:
           type: string
-        birthDate:
-          type: string
         particularity:
           type: string
