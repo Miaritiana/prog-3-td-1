@@ -7,9 +7,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
+import app.prog.exception.NotFoundException;
 
 import java.util.List;
 import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -34,8 +36,7 @@ public class AuthorService {
             repository.delete(optional.get());
             return optional.get();
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-                    "Book "+ AuthorId + " not found");
+            throw new NotFoundException("AuthorEntity." + AuthirId + " not found");
         }
     }
 }
