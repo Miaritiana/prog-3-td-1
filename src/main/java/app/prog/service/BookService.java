@@ -1,5 +1,6 @@
 package app.prog.service;
 
+import app.prog.exception.NotFoundException;
 import app.prog.model.BookEntity;
 import app.prog.repository.BookRepository;
 import lombok.AllArgsConstructor;
@@ -34,8 +35,7 @@ public class BookService {
             repository.delete(optional.get());
             return optional.get();
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
-                    "Book "+ BookEntityId + " not found");
+            throw new NotFoundException("AuthorEntity." + BookEntityId + " not found");
         }
     }
 }
