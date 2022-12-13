@@ -36,7 +36,7 @@ public class AuthorService {
             repository.delete(optional.get());
             return optional.get();
         } else {
-            throw new NotFoundException("AuthorEntity." + id + " not found");
+            throw new NotFoundException("AuthorEntity." + AuthirId + " not found");
         }
     }
 }
